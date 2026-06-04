@@ -91,7 +91,7 @@ cupsMakeServerCredentials(
   GENERAL_NAMES *gens;			// Names for SubjectAltName certificate extension
 
 
-  DEBUG_printf(("cupsMakeServerCredentials(path=\"%s\", common_name=\"%s\", num_alt_names=%d, alt_names=%p, expiration_date=%d)", path, common_name, num_alt_names, alt_names, (int)expiration_date));
+  DEBUG_printf(("cupsMakeServerCredentials(path=\"%s\", common_name=\"%s\", num_alt_names=%d, alt_names=%p, expiration_date=%lld)", path, common_name, num_alt_names, alt_names, (long long)expiration_date));
 
   // Filenames...
   if (!path)

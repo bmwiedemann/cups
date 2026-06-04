@@ -1018,7 +1018,7 @@ cupsdLoadAllSubscriptions(void)
       */
 
       if (value && isdigit(*value & 255))
-	sub->expire = atoi(value);
+	sub->expire = atoll(value);
       else
       {
 	cupsdLogMessage(CUPSD_LOG_ERROR,
@@ -1178,7 +1178,7 @@ cupsdSaveAllSubscriptions(void)
 
     cupsFilePrintf(fp, "LeaseDuration %d\n", sub->lease);
     cupsFilePrintf(fp, "Interval %d\n", sub->interval);
-    cupsFilePrintf(fp, "ExpirationTime %ld\n", (long)sub->expire);
+    cupsFilePrintf(fp, "ExpirationTime %lld\n", (long long)sub->expire);
     cupsFilePrintf(fp, "NextEventId %d\n", sub->next_event_id);
 
     cupsFilePuts(fp, "</Subscription>\n");
